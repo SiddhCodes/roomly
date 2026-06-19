@@ -1,12 +1,15 @@
 import express from "express";
 import cors from "cors";
-import "dotenv/config";
+import env from "dotenv";
+env.config();
 
 const app = express();
 
+console.log(process.env.VITE_SERVER_URL);
+
 app.use(
   cors({
-    origin: [process.env.CLIENT_URL, "http://localhost:5173"],
+    origin: [process.env.VITE_SERVER_URL, "http://localhost:5173"],
     credentials: true,
   }),
 );
