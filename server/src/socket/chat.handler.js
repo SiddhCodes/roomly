@@ -18,7 +18,7 @@ export const registerChatHandlers = (io, socket) => {
 
     io.to(roomId).emit("online_users", roomUsers[roomId]);
 
-    console.log(`${username} joined ${roomId}`);
+    // console.log(`${username} joined ${roomId}`);
   });
 
   socket.on("send_message", (message) => {

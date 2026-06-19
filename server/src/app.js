@@ -1,11 +1,12 @@
 import express from "express";
 import cors from "cors";
+import "dotenv/config";
 
 const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://roomly-mauve.vercel.app/"],
+    origin: [process.env.CLIENT_URL, "http://localhost:5173"],
     credentials: true,
   }),
 );
